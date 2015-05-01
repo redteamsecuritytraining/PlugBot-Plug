@@ -72,6 +72,11 @@ class Dropzone_model Extends CI_Model {
     
     function updateDropzone($dropzone_url, $dropzone_tor)
     {
+        /*
+         * Makes the updates to the dropzone table with 
+         * any new settings  
+         */
+        
         $data = array(
                 'dropzone_url' => $dropzone_url,
                 'dropzone_tor' => $dropzone_tor

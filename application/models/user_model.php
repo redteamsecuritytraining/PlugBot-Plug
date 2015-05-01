@@ -2,7 +2,6 @@
 
 class User_model Extends CI_Model {
     
-
     
     function validate($username, $password)
     {

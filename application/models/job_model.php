@@ -4,6 +4,12 @@ class Job_model Extends CI_Model {
 
     function insertJob($botkey, $job_name, $job_app_random, $job_random, $job_cmd, $job_output, $job_id)
     {
+        /* 
+         * Inserts a new job into the Job table. Also
+         * sets the status to '1' indicating that its
+         * a new job to be picked up
+         */
+        
         $job = array(
             'job_status'        =>      '1', // Set status to '1'; aka pending job...
             'job_botkey'        =>      $botkey,
@@ -20,7 +26,11 @@ class Job_model Extends CI_Model {
 
     function getAllNewJobs($botkey)
     {
-    $this->db->order_by('job_id', 'desc');
+        /*
+         * Gathers all new jobs 
+         */
+        
+        $this->db->order_by('job_id', 'desc');
         $this->db->where('job_status', 1);
         $this->db->where('job_botkey', $botkey);
         return $this->db->get('tblJob');
@@ -28,6 +38,10 @@ class Job_model Extends CI_Model {
 
     function updateJobComplete($job_id)
     {
+        /*
+         * Updates the job as complete in the local table 
+         */
+        
         $data = array(
                 'job_status' => '2' // '2' represents a job that has been exectued
             );
