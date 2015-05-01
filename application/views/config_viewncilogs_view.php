@@ -1,7 +1,7 @@
 <html lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<title>Config - View NON Check-In Logs</title>
+	<title>Config - View Non Check-In Logs</title>
         <link rel="stylesheet" href="<?php echo 'http://'.$_SERVER['SERVER_NAME'].'/css/style.css'; ?>" type="text/css" media="screen" />
 </head>
 
@@ -23,17 +23,17 @@
 
 </div>
 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
 
-    <script type="text/javascript" charset="utf-8">
-            $('input').click(function(){
-                    $(this).select();
-            });
-    </script>
+<script type="text/javascript" charset="utf-8">
+        $('input').click(function(){
+                $(this).select();
+        });
+</script>
 
-    <script type="text/javascript" charset="utf-8">
-            $('tr:odd').css('background', '#e3e3e3');
-    </script>
+<script type="text/javascript" charset="utf-8">
+        $('tr:odd').css('background', '#e3e3e3');
+</script>
 
 </body>
 </html>
