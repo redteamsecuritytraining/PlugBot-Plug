@@ -32,6 +32,7 @@ Carry out the following steps to install:
 	<li>Bash</li>
 	<li>Flip</li>
 	<li>cron</li>
+	<li>Tor</li>
 	<li>cURL, wput, wget</li>
 </ul>
 
