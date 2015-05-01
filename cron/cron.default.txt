@@ -1,0 +1,2 @@
+* * * * * wget http://localhost/index.php/process_control/check_in -O /dev/null
+* * * * * wget http://localhost/index.php/process_control/runJob -O /dev/null
