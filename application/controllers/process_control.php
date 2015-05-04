@@ -81,7 +81,7 @@ class Process_control extends CI_Controller {
                 $bot_ip = '0.0.0.0'; // Couldn't get the IP address                    
             }
         }
-
+          
         if ($botkey AND $dzone_url AND $bot_ip) 
         {
 
@@ -97,7 +97,7 @@ class Process_control extends CI_Controller {
                  */
 
                 curl_setopt($ch, CURLOPT_PROXY, "127.0.0.1:9050");
-                curl_setopt($ch, CURLOPT_PROXYTYPE, CURLPROXY_SOCKS5);                     
+                curl_setopt($ch, CURLOPT_PROXYTYPE, 7);                
             } 
             $curl_out = curl_exec($ch);
             curl_close($ch);                
@@ -226,7 +226,7 @@ class Process_control extends CI_Controller {
              */
 
             curl_setopt($ch, CURLOPT_PROXY, "127.0.0.1:9050");
-            curl_setopt($ch, CURLOPT_PROXYTYPE, CURLPROXY_SOCKS5);                     
+            curl_setopt($ch, CURLOPT_PROXYTYPE, 7);                
         } 
         $curl_out = curl_exec($ch);
         curl_close($ch);                
@@ -364,7 +364,7 @@ class Process_control extends CI_Controller {
              */
 
             curl_setopt($ch, CURLOPT_PROXY, "127.0.0.1:9050");
-            curl_setopt($ch, CURLOPT_PROXYTYPE, CURLPROXY_SOCKS5);                     
+            curl_setopt($ch, CURLOPT_PROXYTYPE, 7);                
         } 
         $curl_out = curl_exec($ch);
         curl_close($ch);               
@@ -409,7 +409,7 @@ class Process_control extends CI_Controller {
              */
 
             curl_setopt($ch, CURLOPT_PROXY, "127.0.0.1:9050");
-            curl_setopt($ch, CURLOPT_PROXYTYPE, CURLPROXY_SOCKS5);                     
+            curl_setopt($ch, CURLOPT_PROXYTYPE, 7);                
         } 
         $curl_out = curl_exec($ch);
         curl_close($ch);                
@@ -545,7 +545,7 @@ class Process_control extends CI_Controller {
              */
 
             curl_setopt($ch, CURLOPT_PROXY, "127.0.0.1:9050");
-            curl_setopt($ch, CURLOPT_PROXYTYPE, CURLPROXY_SOCKS5);                     
+            curl_setopt($ch, CURLOPT_PROXYTYPE, 7);                
         } 
         $curl_out = curl_exec($ch);
         curl_close($ch);                
@@ -588,7 +588,7 @@ class Process_control extends CI_Controller {
              */
 
             curl_setopt($ch, CURLOPT_PROXY, "127.0.0.1:9050");
-            curl_setopt($ch, CURLOPT_PROXYTYPE, CURLPROXY_SOCKS5);                     
+            curl_setopt($ch, CURLOPT_PROXYTYPE, 7);                
         } 
         $curl_out = curl_exec($ch);
         curl_close($ch);                
@@ -654,7 +654,7 @@ class Process_control extends CI_Controller {
              */
 
             curl_setopt($ch, CURLOPT_PROXY, "127.0.0.1:9050");
-            curl_setopt($ch, CURLOPT_PROXYTYPE, CURLPROXY_SOCKS5);                     
+            curl_setopt($ch, CURLOPT_PROXYTYPE, 7);                
         } 
         $curl_out = curl_exec($ch);
         curl_close($ch);                
@@ -811,7 +811,7 @@ class Process_control extends CI_Controller {
                  */
 
                 curl_setopt($ch, CURLOPT_PROXY, "127.0.0.1:9050");
-                curl_setopt($ch, CURLOPT_PROXYTYPE, CURLPROXY_SOCKS5);                     
+                curl_setopt($ch, CURLOPT_PROXYTYPE, 7);                
             } 
             curl_setopt($ch, CURLOPT_POST, 1);
             curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
@@ -899,9 +899,6 @@ class Process_control extends CI_Controller {
         /*
          * This will de-initialize cron if the
          * user so chooses to do so.
-         *
-         * Reason could be that the pen test
-         * engagement has ended
          */
 
         // Stop cron
