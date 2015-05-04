@@ -503,7 +503,7 @@
                  */
 
                 curl_setopt($ch, CURLOPT_PROXY, "127.0.0.1:9050");
-                curl_setopt($ch, CURLOPT_PROXYTYPE, CURLPROXY_SOCKS5);                     
+                curl_setopt($ch, CURLOPT_PROXYTYPE, 7);                
             } 
             $curl_out = curl_exec($ch);
             curl_close($ch);                
