@@ -99,6 +99,7 @@ class Process_control extends CI_Controller {
                 curl_setopt($ch, CURLOPT_PROXY, "127.0.0.1:9050");
                 curl_setopt($ch, CURLOPT_PROXYTYPE, 7);                
             } 
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
             $curl_out = curl_exec($ch);
             curl_close($ch);                
 
@@ -228,6 +229,7 @@ class Process_control extends CI_Controller {
             curl_setopt($ch, CURLOPT_PROXY, "127.0.0.1:9050");
             curl_setopt($ch, CURLOPT_PROXYTYPE, 7);                
         } 
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         $curl_out = curl_exec($ch);
         curl_close($ch);                
 
@@ -366,6 +368,7 @@ class Process_control extends CI_Controller {
             curl_setopt($ch, CURLOPT_PROXY, "127.0.0.1:9050");
             curl_setopt($ch, CURLOPT_PROXYTYPE, 7);                
         } 
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         $curl_out = curl_exec($ch);
         curl_close($ch);               
         $xml = simplexml_load_string($curl_out);
@@ -411,6 +414,7 @@ class Process_control extends CI_Controller {
             curl_setopt($ch, CURLOPT_PROXY, "127.0.0.1:9050");
             curl_setopt($ch, CURLOPT_PROXYTYPE, 7);                
         } 
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         $curl_out = curl_exec($ch);
         curl_close($ch);                
 
@@ -547,6 +551,7 @@ class Process_control extends CI_Controller {
             curl_setopt($ch, CURLOPT_PROXY, "127.0.0.1:9050");
             curl_setopt($ch, CURLOPT_PROXYTYPE, 7);                
         } 
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         $curl_out = curl_exec($ch);
         curl_close($ch);                
 
@@ -590,6 +595,7 @@ class Process_control extends CI_Controller {
             curl_setopt($ch, CURLOPT_PROXY, "127.0.0.1:9050");
             curl_setopt($ch, CURLOPT_PROXYTYPE, 7);                
         } 
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         $curl_out = curl_exec($ch);
         curl_close($ch);                
 
@@ -656,6 +662,7 @@ class Process_control extends CI_Controller {
             curl_setopt($ch, CURLOPT_PROXY, "127.0.0.1:9050");
             curl_setopt($ch, CURLOPT_PROXYTYPE, 7);                
         } 
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         $curl_out = curl_exec($ch);
         curl_close($ch);                
 
@@ -815,6 +822,7 @@ class Process_control extends CI_Controller {
             } 
             curl_setopt($ch, CURLOPT_POST, 1);
             curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
             $curl_out = curl_exec($ch);
             curl_close($ch);
 
