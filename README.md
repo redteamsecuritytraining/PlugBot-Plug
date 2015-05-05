@@ -9,7 +9,7 @@ PlugBot project is a security research project by <a href="http://www.redteamsec
 
 Jeremiah began developing the concept in early 2010 upon the surge of <a href="http://en.wikipedia.org/wiki/Plug_computer">plug computers</a> into the tech market. Although the development ceased not soon after, the research aspect continued into his dissertation and finally came to life again in early 2015.
 
-<h1>Installation</h2>
+<h1>Bot Installation</h2>
 
 Carry out the following steps to install:
 
@@ -20,7 +20,7 @@ Carry out the following steps to install:
 	<li>Ensure the system requirements below are installed</li>
 </ol>
 
-<b>System Requirements</b>
+<b>Bot System Requirements</b>
 
 <ul>
 	<li>Linux OS (tested on Debian)</li>
