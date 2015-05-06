@@ -17,6 +17,7 @@ Carry out the following steps to install:
 	<li>Copy the code into your web server's web root</li>
 	<li>Open application/config/config.php and change the encryption_key to arbitrary/random characters (line 227)</li>
 	<li>Open application/config/database.php and set your database's hostname, username and password (lines 51 to 53)</li>
+	<li>Import the MySQL script into the database</li>
 	<li>Ensure the system requirements below are installed</li>
 </ol>
 
