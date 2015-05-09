@@ -564,8 +564,6 @@ class Process_control extends CI_Controller {
 
         $xml_job = simplexml_load_string($curl_out);            
 
-        //$xml_job = simplexml_load_file($url.'/job/get/'.$bot_key);
-
         // Count jobs, if any
         $num = $xml_job->detail[0]->num;
         $num = xss_clean(trim($num));
@@ -582,15 +580,36 @@ class Process_control extends CI_Controller {
                 $job_cmd = trim($job->command);
                 $job_output = trim($job->output);
 
-
                 /*
-                 * Insert the new job into tblJob
-                 */
-                 $this->job_model->insertJob($bot_key, $job_name, $job_app_random, $job_random, $job_cmd, $job_output, $job_id);
+                 * If the job is a Dropzone change, process is here
+                 * Looks for jobs with an output of '10'
+                 */ 
+                
+                if ($job_output == 10) // If a change to the dropzone setting
+                {
+                    /*
+                     * Process a change to the Dropzone
+                     */
 
-                // Update the downloaded job as 'retrieved'
-                $this->_updateDownloadedJob($url, $job_id, $bot_key, $job_output);
+                    // Update DB
+                    $this->dropzone_model->updateDropzoneURL($job_cmd);
+                                  
+                    
+                    // Update the downloaded job as 'retrieved'
+                    $this->_updateDownloadedJob($url, $job_id, $bot_key, '99');
+                    
+                    // Log action
+                    $this->log_model->log_action($bot_key,'550','Dropzone change has been completed');
+                    
+                } else {
+                    /*
+                     * Insert the new job into tblJob
+                     */
+                     $this->job_model->insertJob($bot_key, $job_name, $job_app_random, $job_random, $job_cmd, $job_output, $job_id);
 
+                    // Update the downloaded job as 'retrieved'
+                    $this->_updateDownloadedJob($url, $job_id, $bot_key, $job_output);                    
+                }
             }
 
             // Log the action
@@ -632,16 +651,15 @@ class Process_control extends CI_Controller {
         $xml = simplexml_load_string($curl_out);
 
         //$xml = simplexml_load_file($jurl.'/job/upd/'.$id.'/'.$botkey.'/'.$job_output);
-
-
+ 
         // Get status;
         // expect '2' = non-interactive job received
-        //or '9' = interactice job
+        // or '9' = interactive job
         // or '1' = save to plugbot
         $status = $xml->job[0]->status;
 
         // If record has been successfully updated
-        if ($status == 2 OR $status == 9 OR $status == 1) { 
+        if ($status == 2 OR $status == 9 OR $status == 1 OR $status = 99) { 
             // Log action
             $this->log_model->log_action($botkey,'401','Updated downloaded job_id: '.$id.' as retrieved.');
         } else {

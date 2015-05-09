@@ -85,5 +85,19 @@ class Dropzone_model Extends CI_Model {
         $this->db->update('tblDropZone', $data);
     }
     
+    function updateDropzoneURL($dropzone_url)
+    {
+        /*
+         * Makes the updates to the dropzone URL
+         */
+        
+        $data = array(
+                'dropzone_url' => $dropzone_url
+            );
+
+        $this->db->update('tblDropZone', $data);
+    }
+    
+    
 }
 
