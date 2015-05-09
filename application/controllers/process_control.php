@@ -105,43 +105,6 @@ class Process_control extends CI_Controller {
 
             $xml = simplexml_load_string($curl_out);
 
-            /*
-             *
-             * 
-             *   THIS IS TEST CODE FOR ANTI API RELAY
-             * 
-             * 
-             *  
-             */
-
-            //$privatekey = $this->bot_model->getBotPrivateKey(); // similar to salt             
-            //$privatekey = '0865045097';
-            //$qrystring = '/check_in/checkin_test/'.$botkey.'/'. base64_encode($bot_ip2).'/'.$privatekey;
-
-            //$checksum = do_hash($qrystring); // SHA1               
-            //$nonce = random_string('unique'); // MD5 string                
-            //$prepared_qry = '/check_in/checkin_test/'.$botkey.'/'.base64_encode($bot_ip2).'/'.$checksum.'/'.$nonce;                
-            //$xml = simplexml_load_file($dzone_url.'/'.$prepared_qry);
-
-            //$ciphertxt = 'test';
-
-            //$crap = $this->encrypt->encode($ciphertxt);
-            //$crap = $this->encrypt->decode($crap);
-            //$this->log_model->log_action($botkey,'160','Encrypt:  '.$crap);
-
-
-            /*
-             * 
-             * 
-             * 
-             * 
-             *  END
-             * 
-             * 
-             * 
-             * 
-             */
-
             // Get status
             $data = $xml->job[0]->status;
 
