@@ -40,7 +40,7 @@ Carry out the following steps to install:
 
 The default username is <b>admin</b> and the default password is <b>admin</b>.
 
-<b>Login url: http://[your_url_or_ip]/index.php/home/setup</b>
+<b>Login url:</b> http://[your_url_or_ip]/index.php/home/setup
 
 <h1>Contributors</h1>
 
