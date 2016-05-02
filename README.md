@@ -40,6 +40,8 @@ Carry out the following steps to install:
 
 The default username is <b>admin</b> and the default password is <b>admin</b>.
 
+<b>Login url: http://[your_url_or_ip]/index.php/home/setup</b>
+
 <h1>Contributors</h1>
 
 Jeremiah is an information security consultant, not a developer. Therefore much help is needed to improve the project all around. If you're proficient in PHP / CodeIgniter and want to contribute, contact jeremiah[at]redteamsecure[dot]com. Help is greatly needed!
