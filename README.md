@@ -1,5 +1,6 @@
-<img src="http://www.redteamsecure.com/images/labs/pb.png"/>
+<h1>Setup Video Tutorials</h1>
 
+<a href="https://www.youtube.com/playlist?list=PLnyNNzQS9zzHCKSMMLGWgYiVn5qt90rpO">Getting Started with PlugBot - YouTube Playlist</a>
 
 <h1>Synopsis</h1>
 
