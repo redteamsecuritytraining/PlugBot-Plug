@@ -2,6 +2,12 @@
 
 <a href="https://www.youtube.com/playlist?list=PLnyNNzQS9zzHCKSMMLGWgYiVn5qt90rpO">Getting Started with PlugBot - YouTube Playlist</a>
 
+<h1>PlugBot Videos</h1>
+
+Check out these YouTube videos featuring the PlugBot:<br>
+<a href="https://youtu.be/r0jBLzmrH9w">Hackers Love This Tiny Box</a><br>
+<a href="https://www.youtube.com/channel/UCnARzOoFCcpSO9PTlIAEywg">RedTeam Security's YouTube</a>
+
 <h1>Synopsis</h1>
 
 PlugBot project is a security research project by <a href="http://www.redteamsecure.com">RedTeam Security</a>, led by Jeremiah Talamantes. It is designed to be a proof-of-concept / experimental foray into the development of software that could potentially support the concept of a hardware botnet. The project is made up of two components, PlugBot Bot and PlugBot Command & Control. The hardware component to this project is intended to be single-board computers, such as: Raspberry Pi, Beaglebone, Cubox, etc.
